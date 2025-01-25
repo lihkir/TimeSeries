@@ -2172,7 +2172,7 @@ dtype: object
 <li><p>La mayoría de las series temporales <em><strong>presentan una o varias de las estructuras internas mencionadas</strong></em>. Basándose en esta noción, una <em><strong>serie temporal puede expresarse como</strong></em></p>
 <div class="math notranslate nohighlight">
 \[
-    y_{t}=f_{t}+s_{t}+c_{t}+\varepsilon_{t},
+    y_{t}=F_{t}+S_{t}+C_{t}+\varepsilon_{t},
     \]</div>
 <p>que es una suma de los componentes de <em><strong>tendencia, componentes estacionales, cíclicas e irregulares</strong></em> en ese orden. Aquí, <span class="math notranslate nohighlight">\(t\)</span> es el <em><strong>índice temporal</strong></em> en el que observaciones sobre la serie se han tomado en <span class="math notranslate nohighlight">\(t = 1,2,3, \dots, T\)</span> <em><strong>puntos sucesivos e igualmente espaciados en el tiempo</strong></em>.</p>
 </li>
@@ -2939,7 +2939,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4be3e6d196683933373038ee8c31ebcfee0eeeac79da13f00393bc60edc937fd.png" src="_images/4be3e6d196683933373038ee8c31ebcfee0eeeac79da13f00393bc60edc937fd.png" />
+<img alt="_images/44356dc5a22eb9337a1673c26e51138740e2111f5c095e960233b446fbc8ab6b.png" src="_images/44356dc5a22eb9337a1673c26e51138740e2111f5c095e960233b446fbc8ab6b.png" />
 </div>
 </div>
 </section>
@@ -3562,10 +3562,10 @@ P(Y_{1}=y_{1}, Y_{2}=y_{2}, \dots, Y_{T}=y_{T})=f(Y_{1}=y_{1})f(Y_{2}=y_{2})\cdo
 <p class="admonition-title">Definición</p>
 <ul>
 <li><p>La estacionalidad se manifiesta como <em><strong>fluctuaciones periódicas y repetitivas en una serie temporal</strong></em> y, por tanto, se <em><strong>modelan como una suma ponderada de ondas senoidales de periodicidad conocida</strong></em>.</p></li>
-<li><p>Suponiendo que la tendencia a largo plazo se ha eliminado mediante una línea de tendencia, el <em><strong>modelo de estacionalidad puede expresarse como</strong></em> <span class="math notranslate nohighlight">\(y_{t} = s_{t}+ \varepsilon_{t}\)</span>, donde la variación estacional es</p>
+<li><p>Suponiendo que la tendencia a largo plazo se ha eliminado mediante una línea de tendencia, el <em><strong>modelo de estacionalidad puede expresarse como</strong></em> <span class="math notranslate nohighlight">\(y_{t} = S_{t}+ \varepsilon_{t}\)</span>, donde la variación estacional es</p>
 <div class="math notranslate nohighlight">
 \[
-    s_{t}=\sum_{k=1}^{L}(w_{k}\cos(\alpha t)+v_{k}\sin(\alpha t))+b,
+    S_{t}=\sum_{k=1}^{L}(w_{k}\cos(\alpha t)+v_{k}\sin(\alpha t))+b,
     \]</div>
 <p>con periocidad <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 </li>
@@ -5512,7 +5512,7 @@ Freq: ME, Name: Mean_Temperature, dtype: float64
 <section id="prueba-de-dickey-fuller">
 <h2><span class="section-number">1.29. </span>Prueba de Dickey-Fuller<a class="headerlink" href="#prueba-de-dickey-fuller" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>Dada serie temporal generada por un proceso con una estructura <em><strong>Autorregresiva de Primer Orden, AR(1)</strong></em>, también conocida como proceso de primer orden de Markov, y es ampliamente utilizada en diversas disciplinas</p>
+<li><p>Dada una serie temporal generada por un proceso con una estructura <em><strong>Autorregresiva de Primer Orden, AR(1)</strong></em>, también conocida como <em><strong>proceso de primer orden de Markov</strong></em>, y es ampliamente utilizada en diversas disciplinas</p>
 <div class="math notranslate nohighlight" id="equation-ar1-dickey-fuller">
 <span class="eqno">(1.4)<a class="headerlink" href="#equation-ar1-dickey-fuller" title="Link to this equation">#</a></span>\[
   y_{t}=\phi y_{t-1}+\varepsilon_{t},
@@ -5654,14 +5654,11 @@ Freq: ME, Name: Mean_Temperature, dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">air_miles</span><span class="p">[</span><span class="s1">&#39;Air miles flown&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Monthly air miles flown during 1963 - 1970&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Monthly air miles flown during 1963 - 1970&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Monthly air miles flown during 1963 - 1970&#39;)
-</pre></div>
-</div>
 <img alt="_images/1232a562f91c8cbf74a557cfaa78dcaae991eea99bd79cdb674f9ee3719bdca9.png" src="_images/1232a562f91c8cbf74a557cfaa78dcaae991eea99bd79cdb674f9ee3719bdca9.png" />
 </div>
 </div>
@@ -5686,7 +5683,8 @@ Freq: ME, Name: Mean_Temperature, dtype: float64
 </div>
 <ul class="simple">
 <li><p>El <em><strong>argumento</strong></em> <code class="docutils literal notranslate"><span class="pre">autolag='AIC'</span></code> <em><strong>indica a la función que elija un número adecuado de rezagos</strong></em> para la prueba, <em><strong>maximizando el criterio de información de Akaike (AIC)</strong></em>. Esto <em><strong>evita la necesidad de especificar manualmente el número de rezagos y reduce el proceso de prueba y error</strong></em>.</p></li>
-<li><p>El <span class="math notranslate nohighlight">\(p\)</span>-value de la prueba ADF es 0.9945, lo que <em><strong>confirma nuestros hallazgos del análisis exploratorio de datos</strong></em>. La función <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> devuelve varios valores en una tupla. Hemos almacenado los resultados en la variable <code class="docutils literal notranslate"><span class="pre">adf_resultado</span></code> y accedido al segundo elemento <code class="docutils literal notranslate"><span class="pre">adf_result[1]</span></code> <em><strong>para obtener el</strong></em> <span class="math notranslate nohighlight">\(p\)</span><em><strong>-value de la prueba</strong></em>. También se proporcionan otros datos interesantes, como el número de <em><strong>rezagos utilizados</strong></em> (<code class="docutils literal notranslate"><span class="pre">usedlag</span></code>) y los <em><strong>valores críticos del estadístico de prueba</strong></em> para diferentes niveles de confianza.</p></li>
+<li><p>El <span class="math notranslate nohighlight">\(p\)</span>-value de la prueba ADF es 0.9945, lo que <em><strong>confirma nuestros hallazgos del análisis exploratorio de datos</strong></em>. La función <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> devuelve varios valores en una tupla. Hemos almacenado los resultados en la variable <code class="docutils literal notranslate"><span class="pre">adf_resultado</span></code> y accedido al segundo elemento <code class="docutils literal notranslate"><span class="pre">adf_result[1]</span></code> <em><strong>para obtener el</strong></em> <span class="math notranslate nohighlight">\(p\)</span><em><strong>-value de la prueba</strong></em>.</p></li>
+<li><p>También se proporcionan otros datos interesantes, como el número de <em><strong>rezagos utilizados</strong></em> (<code class="docutils literal notranslate"><span class="pre">usedlag</span></code>) y los <em><strong>valores críticos del estadístico de prueba</strong></em> para diferentes niveles de confianza.</p></li>
 </ul>
 </section>
 <section id="descomposicion-de-series-temporales">
@@ -5744,7 +5742,7 @@ T_{t}=\beta_{0}+\beta_{1}t.
 <li><p>En esta sección, discutiremos los siguientes dos métodos populares para <em><strong>estimar la tendencia y los componentes estacionales</strong></em>:</p>
 <ul>
 <li><p>Método de <em><strong>medias móviles</strong></em></p></li>
-<li><p><em><strong>Descomposición estacional</strong></em> y de <em><strong>tendencia</strong></em> mediante la librería <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">statsmodels.tsa</span></code></p></li>
+<li><p><em><strong>Descomposición estacional</strong></em> y de <em><strong>tendencia</strong></em> mediante la librería de <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">statsmodels.tsa</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -6244,11 +6242,11 @@ Shape after removing missing values: (154, 2)
 </div>
 </div>
 <ul class="simple">
-<li><p>Los <em><strong>residuos exhiben una autocorrelación significativa</strong></em>, como se evidencia en el <em><strong>ACF</strong></em>, con varios rezagos superando los intervalos de confianza. Por lo tanto, <em><strong>debemos aplicar diferencias estacionales en los residuos</strong></em>. Dado que los datos originales abarcan todos los trimestres de varios años, y muestran <em><strong>estacionalidad trimestral</strong></em>, optamos por <em><strong>diferencias a lo largo de periodos de cuatro unidades de tiempo</strong></em>.</p></li>
+<li><p>Los <em><strong>residuos exhiben una autocorrelación significativa</strong></em>, como se evidencia en el <em><strong>ACF</strong></em>, con varios rezagos superando los intervalos de confianza. Por lo tanto, <em><strong>debemos aplicar diferencias estacionales en los residuos</strong></em>. Dado que los datos originales abarcan todos los trimestres de varios años, y muestran <em><strong>estacionalidad trimestral</strong></em>, optamos por <em><strong>diferencias a lo largo de periodos de cuatro unidades de tiempo más transformación logarítmica</strong></em>. <em><strong><code class="docutils literal notranslate"><span class="pre">Verifique</span> <span class="pre">que</span> <span class="pre">pasa</span> <span class="pre">si</span> <span class="pre">se</span> <span class="pre">omite</span> <span class="pre">la</span> <span class="pre">transformación</span></code></strong></em> <code class="docutils literal notranslate"><span class="pre">np.log()</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals_qtr_diff</span> <span class="o">=</span> <span class="n">residuals</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals_qtr_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">residuals</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -6264,7 +6262,7 @@ Shape after removing missing values: (154, 2)
 </div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">residuals_qtr_diff</span></code> parece <em><strong>representar fluctuaciones aleatorias sin patrones estacionales ni autocorrelación notable</strong></em>. Al trazar la autocorrelación de <code class="docutils literal notranslate"><span class="pre">residuals_qtr_diff</span></code>, observamos una ACF principalmente aleatoria, con <em><strong>solo dos rezagos que superan los intervalos de confianza del 99%</strong></em>. Esto sugiere que las diferencias estacionales han logrado estacionar los residuos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residuals_qtr_diff</span></code> parece <em><strong>representar fluctuaciones aleatorias sin patrones estacionales ni autocorrelación notable</strong></em>. Al trazar la autocorrelación de <code class="docutils literal notranslate"><span class="pre">residuals_qtr_diff</span></code>, observamos una ACF principalmente aleatoria. Esto sugiere que las diferencias estacionales han logrado estacionar los residuos.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6276,7 +6274,7 @@ Shape after removing missing values: (154, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/911727147048a1254e79bf73a410c867d7cda8285cdba6f3a19e5ac40858f4a2.png" src="_images/911727147048a1254e79bf73a410c867d7cda8285cdba6f3a19e5ac40858f4a2.png" />
+<img alt="_images/3fe80041eadce98f85b68ea18e15099c3848bdefbd281dfc7a130b2bd41a2a51.png" src="_images/3fe80041eadce98f85b68ea18e15099c3848bdefbd281dfc7a130b2bd41a2a51.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6290,7 +6288,7 @@ Shape after removing missing values: (154, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null hypothesis is rejected for lags: (array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null hypothesis is rejected for lags: (array([], dtype=int64),)
 </pre></div>
 </div>
 </div>
