@@ -1062,7 +1062,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <div class="math notranslate nohighlight">
 \[
 \begin{align*}
-\frac{\partial SS_{E}^{\star}}{\partial\beta_{0}} &amp;= \frac{\partial}{\partial\beta_{0}}\left(\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\hat{\beta}_{0})^{2}\right)=-2\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\hat{\beta}_{0})=0
+\frac{\partial SS_{E}^{\star}}{\partial\beta_{0}} &amp;= \frac{\partial}{\partial\beta_{0}}\left(\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2}\right)=-2\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})=0
 \end{align*}
 \]</div>
 <ul class="simple">
@@ -1150,11 +1150,18 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 \end{align*}
 \end{split}\]</div>
 <ul class="simple">
-<li><p>Entonces</p></li>
+<li><p>Reemplazando en <span class="math notranslate nohighlight">\(\text{E}(\tilde{y}_{T})\)</span> se tiene que</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
 \text{E}(\tilde{y}_{T})=(\beta_{0}+\beta_{1}T)\lambda\left(\frac{1}{\lambda}\right)-\lambda\beta_{1}\left(\frac{1-\lambda}{\lambda^{2}}\right)=(\beta_{0}+\beta_{1}T)-\frac{1-\lambda}{\lambda}\beta_{1}=\text{E}(y_{T})-\frac{1-\lambda}{\lambda}\beta_{1}.
+\]</div>
+<ul class="simple">
+<li><p>Esto es</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-expected-value-firstsmooth">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-expected-value-firstsmooth" title="Link to this equation">#</a></span>\[
+\text{E}(\tilde{y}_{T})=\text{E}(y_{T})-\frac{1-\lambda}{\lambda}\beta_{1}.
 \]</div>
 <ul class="simple">
 <li><p>Esto es, la suavización exponencial simple es <em><strong>sesgada como estimador</strong></em> y la cantidad de sesgo está dada por <span class="math notranslate nohighlight">\(-(1-\lambda)\beta_{1}/\lambda\)</span>, la cual puede generar <em><strong>errores de subestimación</strong></em>.</p></li>
@@ -1181,17 +1188,17 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 </ul>
 <div class="math notranslate nohighlight">
 \[
-\frac{1-\lambda}{\lambda}\beta_{1}=\text{E}(\tilde{y}_{T}^{(1)})-E(\tilde{y}_{T}^{(2)})\Rightarrow\tilde{y}_{T}^{(1)}-\tilde{y}_{T}^{(2)}=\frac{1-\lambda}{\lambda}\beta_{1},~\text{entonces}
+\frac{1-\lambda}{\lambda}\beta_{1}=\text{E}(\tilde{y}_{T}^{(1)})-\text{E}(\tilde{y}_{T}^{(2)})\Rightarrow\tilde{y}_{T}^{(1)}-\tilde{y}_{T}^{(2)}=\frac{1-\lambda}{\lambda}\beta_{1},~\text{entonces}
 \]</div>
 <div class="math notranslate nohighlight" id="equation-beta1-estimation-eq">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-beta1-estimation-eq" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-beta1-estimation-eq" title="Link to this equation">#</a></span>\[
 \textcolor{red}{\hat{\beta}_{1, T}=\frac{\lambda}{1-\lambda}(\tilde{y}_{T}^{(1)}-\tilde{y}_{T}^{(2)})}.
 \]</div>
 <ul class="simple">
-<li><p>Usando la Ecuación <a class="reference internal" href="#equation-beta1-estimation-eq">(2.9)</a> tenemos que: <span class="math notranslate nohighlight">\(\text{E}(\tilde{y}_{T}^{(1)})=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T}T)-(1-\lambda)\hat{\beta}_{1, T}/\lambda\)</span>, entonces, análogamente</p></li>
+<li><p>Usando la Ecuación <a class="reference internal" href="#equation-expected-value-firstsmooth">(2.9)</a> tenemos que: <span class="math notranslate nohighlight">\(\text{E}(\tilde{y}_{T}^{(1)})=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T}T)-(1-\lambda)\hat{\beta}_{1, T}/\lambda\)</span>, entonces, análogamente</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-beta0-estimation-eq">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-beta0-estimation-eq" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-beta0-estimation-eq" title="Link to this equation">#</a></span>\[
 \textcolor{red}{\hat{\beta}_{0, T}=\tilde{y}_{T}^{(1)}-T\hat{\beta}_{1, T}+\displaystyle{\frac{1-\lambda}{\lambda}}\hat{\beta}_{1, T}.}
 \]</div>
 <ul class="simple">
@@ -1209,11 +1216,11 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <li><p>Entonces</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-beta0-estimation-eq-yhat">
-<span class="eqno">(2.11)<a class="headerlink" href="#equation-beta0-estimation-eq-yhat" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-beta0-estimation-eq-yhat" title="Link to this equation">#</a></span>\[
 \textcolor{red}{\hat{\beta}_{0, T} = \left(2-T\frac{\lambda}{1-\lambda}\right)\tilde{y}_{T}^{(1)}-\left(1-T\frac{\lambda}{1-\lambda}\right)y_{T}^{(2)}},
 \]</div>
 <ul class="simple">
-<li><p>Combinando las Ecuaciones <a class="reference internal" href="#equation-beta1-estimation-eq">(2.9)</a>-<a class="reference internal" href="#equation-beta0-estimation-eq-yhat">(2.11)</a> tenemos que</p></li>
+<li><p>Combinando las Ecuaciones <a class="reference internal" href="#equation-beta1-estimation-eq">(2.10)</a>-<a class="reference internal" href="#equation-beta0-estimation-eq-yhat">(2.12)</a> tenemos que</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1227,7 +1234,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <li><p>Entonces</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-first-exp-smooth">
-<span class="eqno">(2.12)<a class="headerlink" href="#equation-first-exp-smooth" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-first-exp-smooth" title="Link to this equation">#</a></span>\[
 \textcolor{red}{\tilde{y}_{T}=2\tilde{y}_{T}^{(1)}-\tilde{y}_{T}^{(2)}}
 \]</div>
 <ul class="simple">
@@ -1238,13 +1245,14 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 \text{E}(\tilde{y}_{T}^{(1)}) = (\beta_{0}+\beta_{1}T)-\frac{1-\lambda}{\lambda}\beta_{1}\Rightarrow\tilde{y}_{T}^{(1)}=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T}T)-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}
 \]</div>
 <ul class="simple">
-<li><p>Además</p></li>
+<li><p>Y además</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
 \text{E}(\tilde{y}_{T}^{(2)}) &amp;= \text{E}(\tilde{y}_{T}^{(1)})-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}=\text{E}\left((\hat{\beta}_{0, T}+\hat{\beta}_{1, T}T)-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}\right)-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}\\
-&amp;= (\hat{\beta}_{0, T}+\hat{\beta}_{1, T})-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T})-2\left(\frac{1-\lambda}{\lambda}\right)\hat{\beta}_{1, T}
+&amp;= (\hat{\beta}_{0, T}+\hat{\beta}_{1, T})-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}-\frac{1-\lambda}{\lambda}\hat{\beta}_{1, T}=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T})-2\left(\frac{1-\lambda}{\lambda}\right)\hat{\beta}_{1, T}\\
+&amp;\Rightarrow\tilde{y}_{T}^{(2)}=(\hat{\beta}_{0, T}+\hat{\beta}_{1, T})-2\left(\frac{1-\lambda}{\lambda}\right)\hat{\beta}_{1, T}
 \end{align*}
 \end{split}\]</div>
 <ul class="simple">
@@ -1325,7 +1333,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <ul>
 <li><p>Hasta ahora hemos discutido el uso de suavizadores exponenciales al estimar los <em><strong>modelos de tendencia constante y lineal</strong></em>. Para el primero empleamos el suavizador exponencial simple o de primer orden y para el segundo el suavizador exponencial de segundo orden. Además, se puede demostrar que para el <em><strong>modelo polinómico general de</strong></em> <span class="math notranslate nohighlight">\(n\text{th}\)</span>-ésimo grado de la forma</p>
 <div class="math notranslate nohighlight" id="equation-highorder-exponential-smoothing">
-<span class="eqno">(2.13)<a class="headerlink" href="#equation-highorder-exponential-smoothing" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-highorder-exponential-smoothing" title="Link to this equation">#</a></span>\[
     y_{t}=\beta_{0}+\beta_{1}t+\frac{\beta_{2}}{2!}t^{2}+\cdots+\frac{\beta_{n}}{n!}t^{n}+\varepsilon_{t},
     \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\varepsilon_{t}\)</span> se supone independiente con media 0 y varianza constante <span class="math notranslate nohighlight">\(\sigma_{\varepsilon}^{2}\)</span>, empleamos suavizadores exponenciales de orden <span class="math notranslate nohighlight">\(n-1\)</span></p>
@@ -1378,7 +1386,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <li><p>Por ejemplo, si la observación en el tiempo <span class="math notranslate nohighlight">\(T+1\)</span> está disponible, nuestro pronóstico para futuras observaciones sería</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-fc-in-tplustau-eq">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-fc-in-tplustau-eq" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-fc-in-tplustau-eq" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{align*}
 \tilde{y}_{T+1} &amp;= \lambda y_{T+1}+(1-\lambda)\tilde{y}_{T},\quad\text{o bien}\\
 \tilde{y}_{T+1+\tau}(T+1) &amp;= \lambda y_{T+1}+(1-\lambda)\tilde{y}_{T+\tau}(T)\\[4mm]
@@ -1388,7 +1396,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <a class="reference internal image-reference" href="_images/forecasttau_timeseries.png"><img alt="_images/forecasttau_timeseries.png" src="_images/forecasttau_timeseries.png" style="width: 540.0px; height: 105.66px;" /></a>
 </figure>
 <ul>
-<li><p>Para <span class="math notranslate nohighlight">\(\tau=1\)</span> la Ecuación <a class="reference internal" href="#equation-fc-in-tplustau-eq">(2.14)</a> puede reescribirse como</p>
+<li><p>Para <span class="math notranslate nohighlight">\(\tau=1\)</span> la Ecuación <a class="reference internal" href="#equation-fc-in-tplustau-eq">(2.15)</a> puede reescribirse como</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{align*}
@@ -1403,8 +1411,8 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <div class="admonition-observacion admonition">
 <p class="admonition-title">Observación</p>
 <ul class="simple">
-<li><p>Pronostico para la observación siguiente es simplemente, el <em><strong>pronostico actual mas una fracción del error cometido en el pronostico de la observación actual</strong></em></p></li>
-<li><p>Nótese que la velocidad de reacción del pronostico al error de predicción depende del factor de descuento <span class="math notranslate nohighlight">\(\lambda\)</span></p></li>
+<li><p>El pronóstico para la observación siguiente es, simplemente, el <em><strong>pronóstico actual, más una fracción del error cometido en el pronóstico de la observación actual</strong></em></p></li>
+<li><p>Nótese que la velocidad de reacción del pronóstico al error de predicción depende del factor de descuento <span class="math notranslate nohighlight">\(\lambda\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -1412,7 +1420,7 @@ SS_{E}^{\star}=\sum_{t=0}^{T-1}\theta^{t}(y_{T-t}-\beta_{0})^{2},~\text{donde}~|
 <section id="seleccion-de-lambda">
 <h2><span class="section-number">2.11. </span>Selección de <span class="math notranslate nohighlight">\(\lambda\)</span><a class="headerlink" href="#seleccion-de-lambda" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Definimos la <em><strong>suma de cuadrado para los errores de predicción de horizonte 1</strong></em> como</p></li>
+<li><p>Definimos la <em><strong>suma de cuadrados para los errores de predicción de horizonte 1</strong></em> como</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
@@ -1425,7 +1433,7 @@ SS_{E}(\lambda)=\sum_{t=1}^{T}e_{t}^{2}(1).
 </ul>
 </div>
 <ul class="simple">
-<li><p>Por ejemplo, supongamos que interesados en la <em><strong>velocidad promedio en un tramo específico de una autopista durante las horas no pico</strong></em>. Durante el último año y medio (78 semanas), tenemos disponibles <em><strong>promedios semanales de la velocidad promedio en millas por hora entre las 10 a. m. y las 3 p. m</strong></em>. Los datos se presentan en la siguiente tabla</p></li>
+<li><p>Por ejemplo, supongamos que estamos interesados en la <em><strong>velocidad promedio en un tramo específico de una autopista durante las horas no pico</strong></em>. Durante el último año y medio (78 semanas), tenemos disponibles <em><strong>promedios semanales de la velocidad promedio en millas por hora entre las 10 a. m. y las 3 p. m</strong></em>. Los datos se presentan en la siguiente tabla</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2106,21 +2114,21 @@ Length: 120, dtype: float64
 <li><p>Puede resultar contraintuitivo tener una varianza constante de errores de pronóstico para todos los horizontes de predicción. En su lugar, podemos definir <span class="math notranslate nohighlight">\(\sigma_{e}^{2}(\tau)\)</span> como la <em><strong>varianza del error de pronóstico a</strong></em> <span class="math notranslate nohighlight">\(\tau\)</span> <em><strong>pasos hacia adelante</strong></em> y estimarla mediante</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-error-variance-estimation-tau">
-<span class="eqno">(2.15)<a class="headerlink" href="#equation-error-variance-estimation-tau" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-error-variance-estimation-tau" title="Link to this equation">#</a></span>\[
 \hat{\sigma}_{e}^{2}(\tau)=\frac{1}{T-\tau+1}\sum_{t=\tau}^{T}e_{1}^{2}(\tau).
 \]</div>
 <ul class="simple">
-<li><p>Por lo tanto, la estimación en la Ecuación <a class="reference internal" href="#equation-error-variance-estimation-tau">(2.15)</a> puede ser utilizada en los cálculos del <em><strong>intervalo de predicción para el pronóstico a</strong></em> <span class="math notranslate nohighlight">\(\tau\)</span> <em><strong>pasos hacia adelante</strong></em>.</p></li>
+<li><p>Por lo tanto, la estimación en la Ecuación <a class="reference internal" href="#equation-error-variance-estimation-tau">(2.16)</a> puede ser utilizada en los cálculos del <em><strong>intervalo de predicción para el pronóstico a</strong></em> <span class="math notranslate nohighlight">\(\tau\)</span> <em><strong>pasos hacia adelante</strong></em>.</p></li>
 </ul>
 <ol class="arabic" start="2">
-<li><p>Para el segundo método de estimación de <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span>, primero definiremos la <em><strong>desviación media absoluta</strong></em> <span class="math notranslate nohighlight">\(\Delta\)</span> como</p>
+<li><p>Para el <em><strong>segundo método de estimación de</strong></em> <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span>, primero definiremos la <em><strong>desviación media absoluta</strong></em> <span class="math notranslate nohighlight">\(\Delta\)</span> como</p>
 <div class="math notranslate nohighlight">
 \[
     \Delta = \text{E}(|e-\text{E}(e)|)
     \]</div>
 <p>y, asumiendo que el modelo es correcto, calcular su estimación mediante</p>
 <div class="math notranslate nohighlight" id="equation-mean-absolute-deviationt">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-mean-absolute-deviationt" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-mean-absolute-deviationt" title="Link to this equation">#</a></span>\[
     \hat{\Delta}_{T}=\delta|e_{T}(1)|+(1-\delta)\hat{\Delta}_{T-1}.
     \]</div>
 <p>Entonces, el estimador de <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> está dado por <span id="id4">[<a class="reference internal" href="biblio.html#id5" title="D.C. Montgomery, L.A. Johnson, and J.S. Gardiner. Forecasting and Time Series Analysis. Industrial engineering series. McGraw-Hill, 1990. ISBN 9780070428584. URL: https://books.google.com.co/books?id=t9HuAAAAMAAJ.">Montgomery <em>et al.</em>, 1990</a>]</span> (<em><strong><code class="docutils literal notranslate"><span class="pre">bonus</span></code></strong></em>)</p>
@@ -2138,11 +2146,11 @@ Length: 120, dtype: float64
 <li><p>Para ello, emplearemos el procedimiento descrito originalmente por <span id="id5">[<a class="reference internal" href="biblio.html#id4" title="DW Trigg and A Gi Leach. Exponential smoothing with an adaptive response rate. Journal of the Operational Research Society, 18:53–59, 1967.">Trigg and Leach, 1967</a>]</span> para un único factor de descuento. Como ejemplo, consideraremos el <em><strong>suavizador exponencial de primer orden</strong></em> y lo modificaremos de la siguiente manera:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-adaptive-discount-factor">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-adaptive-discount-factor" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-adaptive-discount-factor" title="Link to this equation">#</a></span>\[
 \hat{y}_{T}=\lambda_{T}y_{T}+(1-\lambda_{T})\hat{y}_{T-1}.
 \]</div>
 <ul>
-<li><p>Nótese que en la Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor">(2.17)</a>, el factor de descuento <span class="math notranslate nohighlight">\(\lambda_{T}\)</span> se introduce como una función del tiempo y, por lo tanto, <em><strong>se le permite adaptarse a los cambios en el modelo de series temporales</strong></em>.</p></li>
+<li><p>Nótese que en la Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor">(2.18)</a>, el factor de descuento <span class="math notranslate nohighlight">\(\lambda_{T}\)</span> se introduce como una función del tiempo y, por lo tanto, <em><strong>se le permite adaptarse a los cambios en el modelo de series temporales</strong></em>.</p></li>
 <li><p>También definimos el <em><strong>error de suavizado</strong></em> como</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2157,20 +2165,20 @@ Length: 120, dtype: float64
 \[
     \frac{Q_{T}}{\hat{\Delta}_{T}},
     \]</div>
-<p>donde <span class="math notranslate nohighlight">\(\hat{\Delta}_{T}\)</span> está dado por la Ecuación <a class="reference internal" href="#equation-mean-absolute-deviationt">(2.16)</a>.</p>
+<p>donde <span class="math notranslate nohighlight">\(\hat{\Delta}_{T}\)</span> está dado por la Ecuación <a class="reference internal" href="#equation-mean-absolute-deviationt">(2.17)</a>.</p>
 </li>
 </ul>
 <ul>
 <li><p><em><strong>Se espera que este cociente sea cercano a 0 cuando el sistema de predicción funciona bien, y que se acerque a</strong></em> <span class="math notranslate nohighlight">\(\pm1\)</span> <em><strong>cuando empiece a fallar</strong></em>. De hecho, <span id="id6">[<a class="reference internal" href="biblio.html#id4" title="DW Trigg and A Gi Leach. Exponential smoothing with an adaptive response rate. Journal of the Operational Research Society, 18:53–59, 1967.">Trigg and Leach, 1967</a>]</span> sugieren fijar el factor de descuento en</p>
 <div class="math notranslate nohighlight" id="equation-adaptive-discount-factor-abs">
-<span class="eqno">(2.18)<a class="headerlink" href="#equation-adaptive-discount-factor-abs" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-adaptive-discount-factor-abs" title="Link to this equation">#</a></span>\[
     \lambda_{T}=\left|\frac{Q_{T}}{\hat{\Delta}_{T}}\right|,
     \]</div>
-<p>Donde <span class="math notranslate nohighlight">\(\hat{\Delta}_{T}\)</span> está dado por la Ecuación <a class="reference internal" href="#equation-mean-absolute-deviationt">(2.16)</a>. La Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor-abs">(2.18)</a> <em><strong>permitirá actualizar automáticamente el factor de descuento</strong></em>.</p>
+<p>Donde <span class="math notranslate nohighlight">\(\hat{\Delta}_{T}\)</span> está dado por la Ecuación <a class="reference internal" href="#equation-mean-absolute-deviationt">(2.17)</a>. La Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor-abs">(2.19)</a> <em><strong>permitirá actualizar automáticamente el factor de descuento</strong></em>.</p>
 </li>
 </ul>
 <ul class="simple">
-<li><p>La siguiente figura muestra <em><strong>dos suavizadores exponenciales simples</strong></em> para el <em><strong>Índice Dow Jones</strong></em>, uno con <span class="math notranslate nohighlight">\(\lambda\)</span> fijo de 0.3 y otro con actualización adaptativa basada en el <em><strong>método Trigg-Leach</strong></em> dado en la Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor-abs">(2.18)</a>. Visualizaremos los <em><strong>últimos cien registros</strong></em> para poder apreciar mejor las predicciones de cada modelo</p></li>
+<li><p>La siguiente figura muestra <em><strong>dos suavizadores exponenciales simples</strong></em> para el <em><strong>Índice Dow Jones</strong></em>, uno con <span class="math notranslate nohighlight">\(\lambda\)</span> fijo de 0.3 y otro con actualización adaptativa basada en el <em><strong>método Trigg-Leach</strong></em> dado en la Ecuación <a class="reference internal" href="#equation-adaptive-discount-factor-abs">(2.19)</a>. Visualizaremos los <em><strong>últimos cien registros</strong></em> para poder apreciar mejor las predicciones de cada modelo</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2252,7 +2260,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 <section id="suavizacion-exponencial-para-datos-estacionales">
 <h2><span class="section-number">2.16. </span>Suavización exponencial para datos estacionales<a class="headerlink" href="#suavizacion-exponencial-para-datos-estacionales" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Algunos datos de series de tiempo exhiben <em><strong>patrones cíclicos o estacionales</strong></em> que no se pueden modelar efectivamente utilizando el modelo polinómico de la Ecuación <a class="reference internal" href="#equation-highorder-exponential-smoothing">(2.13)</a>. Hay varios enfoques disponibles para el análisis de dichos datos.</p></li>
+<li><p>Algunos datos de series de tiempo exhiben <em><strong>patrones cíclicos o estacionales</strong></em> que no se pueden modelar efectivamente utilizando el modelo polinómico de la Ecuación <a class="reference internal" href="#equation-highorder-exponential-smoothing">(2.14)</a>. Hay varios enfoques disponibles para el análisis de dichos datos.</p></li>
 <li><p>La metodología en la que nos centraremos fue introducida originalmente por <span id="id7">[<a class="reference internal" href="biblio.html#id7" title="Charles C Holt. Forecasting seasonals and trends by exponentially weighted moving averages. International journal of forecasting, 20(1):5–10, 2004.">Holt, 2004</a>]</span> y <span id="id8">[<a class="reference internal" href="biblio.html#id8" title="Peter R Winters. Forecasting sales by exponentially weighted moving averages. Management science, 6(3):324–342, 1960.">Winters, 1960</a>]</span> y generalmente se conoce como <em><strong>método de Winters</strong></em>, donde se realiza un ajuste estacional al modelo de tendencia lineal.</p></li>
 </ul>
 <section id="modelo-estacional-aditivo">
@@ -2260,10 +2268,10 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 <ul>
 <li><p>Para el caso del <em><strong>modelo estacional aditivo</strong></em>, asumiremos que la serie temporal estacional se puede representar mediante el siguiente modelo:</p>
 <div class="math notranslate nohighlight" id="equation-additive-stational-model">
-<span class="eqno">(2.19)<a class="headerlink" href="#equation-additive-stational-model" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-additive-stational-model" title="Link to this equation">#</a></span>\[
     y_{t}=L_{t}+S_{t}+\varepsilon_{t},
     \]</div>
-<p>donde <span class="math notranslate nohighlight">\(L_{t}\)</span> representa el nivel o <em><strong>componente de tendencia lineal</strong></em> y puede a su vez ser representado por <span class="math notranslate nohighlight">\(\beta_{0}+\beta_{1}t\)</span>; <span class="math notranslate nohighlight">\(S_{t}\)</span> representa el <em><strong>ajuste estacional</strong></em> con <span class="math notranslate nohighlight">\(S_{t}=S_{t+s}=S_{t+2s}=\cdots\)</span> para <span class="math notranslate nohighlight">\(t=1, 2,\cdots, s-1\)</span> donde <span class="math notranslate nohighlight">\(s\)</span> <em><strong>es la longitud de período (estación) de los ciclos</strong></em>; y suponemos que <span class="math notranslate nohighlight">\(\varepsilon_{t}\)</span> es <em><strong>no correlacionado con media o y varianza constante</strong></em> <span class="math notranslate nohighlight">\(\sigma_{\varepsilon}^{2}\)</span>.</p>
+<p>donde <span class="math notranslate nohighlight">\(L_{t}\)</span> representa el nivel o <em><strong>componente de tendencia lineal</strong></em> y puede a su vez ser representado por <span class="math notranslate nohighlight">\(\beta_{0}+\beta_{1}t\)</span>; <span class="math notranslate nohighlight">\(S_{t}\)</span> representa el <em><strong>ajuste estacional</strong></em> con <span class="math notranslate nohighlight">\(S_{t}=S_{t+s}=S_{t+2s}=\cdots\)</span> para <span class="math notranslate nohighlight">\(t=1, 2,\cdots, s-1\)</span> donde <span class="math notranslate nohighlight">\(s\)</span> <em><strong><code class="docutils literal notranslate"><span class="pre">es</span> <span class="pre">la</span> <span class="pre">longitud</span> <span class="pre">de</span> <span class="pre">período</span> <span class="pre">(estación)</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">ciclos</span></code></strong></em>; y suponemos que <span class="math notranslate nohighlight">\(\varepsilon_{t}\)</span> es <em><strong>no correlacionado con media</strong></em> 0 <em><strong>y varianza constante</strong></em> <span class="math notranslate nohighlight">\(\sigma_{\varepsilon}^{2}\)</span>.</p>
 </li>
 </ul>
 <ul class="simple">
@@ -2274,31 +2282,31 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 \sum_{t=1}^{s}S_{t}=0.
 \]</div>
 <ul class="simple">
-<li><p>En el modelo dado en la Ecuación <a class="reference internal" href="#equation-additive-stational-model">(2.19)</a>, para pronosticar las observaciones futuras, emplearemos <em><strong>suavizadores exponenciales de primer orden con diferentes factores de descuento</strong></em>.</p></li>
+<li><p>En el modelo dado en la Ecuación <a class="reference internal" href="#equation-additive-stational-model">(2.20)</a>, para pronosticar las observaciones futuras, emplearemos <em><strong>suavizadores exponenciales de primer orden con diferentes factores de descuento</strong></em>.</p></li>
 <li><p>El procedimiento para actualizar las estimaciones de los parámetros una vez que se obtiene la observación actual <span class="math notranslate nohighlight">\(y_{T}\)</span> es el siguiente.</p></li>
 </ul>
 <ol class="arabic">
 <li><p>Actualizar la estimación de <span class="math notranslate nohighlight">\(L_{t}\)</span> usando</p>
 <div class="math notranslate nohighlight" id="equation-lt-estimation">
-<span class="eqno">(2.20)<a class="headerlink" href="#equation-lt-estimation" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-lt-estimation" title="Link to this equation">#</a></span>\[
     \hat{L}_{t}=\lambda_{1}(y_{T}-\hat{S}_{T-s})+(1-\lambda_{1})(\hat{L}_{T-1}+\hat{\beta}_{1, T-1}),
     \]</div>
-<p>donde <span class="math notranslate nohighlight">\(0&lt;\lambda_{1}&lt;1\)</span>. Cabe señalar que en la Ecuación <a class="reference internal" href="#equation-lt-estimation">(2.20)</a>, la primera parte puede verse como el valor “actual” de <span class="math notranslate nohighlight">\(L_{T}\)</span> y la segunda parte como el pronóstico de <span class="math notranslate nohighlight">\(L_{T}\)</span> basado en las estimaciones en <span class="math notranslate nohighlight">\(T-1\)</span>.</p>
+<p>donde <span class="math notranslate nohighlight">\(0&lt;\lambda_{1}&lt;1\)</span>. Cabe señalar que en la Ecuación <a class="reference internal" href="#equation-lt-estimation">(2.21)</a>, la primera parte puede verse como el valor “actual” de <span class="math notranslate nohighlight">\(L_{T}\)</span> y la segunda parte como el pronóstico de <span class="math notranslate nohighlight">\(L_{T}\)</span> basado en las estimaciones en <span class="math notranslate nohighlight">\(T-1\)</span>.</p>
 </li>
 </ol>
 <ol class="arabic" start="2">
 <li><p>Actualizar la estimación de <span class="math notranslate nohighlight">\(\beta_{1}\)</span> usando</p>
 <div class="math notranslate nohighlight" id="equation-beta1t-additive-seasonal-model">
-<span class="eqno">(2.21)<a class="headerlink" href="#equation-beta1t-additive-seasonal-model" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-beta1t-additive-seasonal-model" title="Link to this equation">#</a></span>\[
    \hat{\beta}_{1, T}=\lambda_{2}(\hat{L}_{T}-\hat{L}_{T-1})+(1-\lambda_{2})\hat{\beta}_{1, T-1},
    \]</div>
-<p>donde <span class="math notranslate nohighlight">\(0&lt;\lambda_{2}&lt;1\)</span>. Como en el Paso 1, la estimación de <span class="math notranslate nohighlight">\(\beta_{1}\)</span> en la Ecuación <a class="reference internal" href="#equation-beta1t-additive-seasonal-model">(2.21)</a> puede verse como la combinación lineal del actual valor de <span class="math notranslate nohighlight">\(\beta_{1}\)</span> y su pronóstico an el tiempo <span class="math notranslate nohighlight">\(T-1\)</span>.</p>
+<p>donde <span class="math notranslate nohighlight">\(0&lt;\lambda_{2}&lt;1\)</span>. Como en el Paso 1, la estimación de <span class="math notranslate nohighlight">\(\beta_{1}\)</span> en la Ecuación <a class="reference internal" href="#equation-beta1t-additive-seasonal-model">(2.22)</a> puede verse como la combinación lineal del actual valor de <span class="math notranslate nohighlight">\(\beta_{1}\)</span> y su pronóstico an el tiempo <span class="math notranslate nohighlight">\(T-1\)</span>.</p>
 </li>
 </ol>
 <ol class="arabic" start="3">
 <li><p>Actualizar la estimación de <span class="math notranslate nohighlight">\(S_{t}\)</span> usando</p>
 <div class="math notranslate nohighlight" id="equation-seasonal-forecast-additive-model">
-<span class="eqno">(2.22)<a class="headerlink" href="#equation-seasonal-forecast-additive-model" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.23)<a class="headerlink" href="#equation-seasonal-forecast-additive-model" title="Link to this equation">#</a></span>\[
    \hat{S}_{T}=\lambda_{3}(y_{T}-\hat{L}_{T})+(1-\lambda_{3})\hat{S}_{T-s},
    \]</div>
 <p>donde <span class="math notranslate nohighlight">\(0&lt;\lambda_{3}&lt;1\)</span>.</p>
@@ -2315,7 +2323,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 <ul>
 <li><p><em><strong>Estimar los valores iniciales de una suavización exponencial es crucial</strong></em>. Para un conjunto dado de datos históricos con <span class="math notranslate nohighlight">\(n\)</span> estaciones (<span class="math notranslate nohighlight">\(ns\)</span> observaciones), podemos usar las <em><strong>estimaciones de mínimos cuadrados</strong></em> del siguiente modelo:</p>
 <div class="math notranslate nohighlight" id="equation-ols-estimation-additive-model">
-<span class="eqno">(2.23)<a class="headerlink" href="#equation-ols-estimation-additive-model" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.24)<a class="headerlink" href="#equation-ols-estimation-additive-model" title="Link to this equation">#</a></span>\[
   y_{t}=\beta_{0}+\beta_{1}t+\sum_{i=1}^{s-1}\gamma_{i}(I_{t, i}-I_{t, s})+\varepsilon_{t},
   \]</div>
 <p>donde</p>
@@ -2330,7 +2338,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 </li>
 </ul>
 <ul class="simple">
-<li><p>Las <em><strong>estimaciones de mínimos cuadrados de los parámetros</strong></em> de la Ecuación <a class="reference internal" href="#equation-ols-estimation-additive-model">(2.23)</a> se utilizan para obtener los valores iniciales como</p></li>
+<li><p>Las <em><strong>estimaciones de mínimos cuadrados de los parámetros</strong></em> de la Ecuación <a class="reference internal" href="#equation-ols-estimation-additive-model">(2.24)</a> se utilizan para obtener los valores iniciales como</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -2342,7 +2350,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 \end{align*}
 \end{split}\]</div>
 <ul class="simple">
-<li><p>Estos son valores iniciales de los parámetros del modelo en el origen original de tiempo, <span class="math notranslate nohighlight">\(t = 0\)</span>. Para realizar pronósticos desde el origen correcto de tiempo, la componente permanente debe trasladarse al tiempo <span class="math notranslate nohighlight">\(T\)</span> calculando <span class="math notranslate nohighlight">\(\hat{L}_{T}=\hat{L}_{0}+ns\hat{\beta}_{1}\)</span>. Alternativamente, se podrían suavizar los parámetros usando las Ecuaciones <a class="reference internal" href="#equation-lt-estimation">(2.20)</a>-<a class="reference internal" href="#equation-seasonal-forecast-additive-model">(2.22)</a> para periodos de tiempo <span class="math notranslate nohighlight">\(t = 1, 2,\dots, T\)</span> <span id="id9">[<a class="reference internal" href="biblio.html#id29" title="R. Hyndman, A.B. Koehler, J.K. Ord, and R.D. Snyder. Forecasting with Exponential Smoothing: The State Space Approach. Springer Series in Statistics. Springer Berlin Heidelberg, 2008. ISBN 9783540719182. URL: https://books.google.com.co/books?id=GSyzox8Lu9YC.">Hyndman <em>et al.</em>, 2008</a>]</span>.</p></li>
+<li><p>Estos son valores iniciales de los parámetros del modelo en el origen original de tiempo, <span class="math notranslate nohighlight">\(t = 0\)</span>. Para realizar pronósticos desde el origen correcto de tiempo, la componente permanente debe trasladarse al tiempo <span class="math notranslate nohighlight">\(T\)</span> calculando <span class="math notranslate nohighlight">\(\hat{L}_{T}=\hat{L}_{0}+ns\hat{\beta}_{1}\)</span>. Alternativamente, se podrían suavizar los parámetros usando las Ecuaciones <a class="reference internal" href="#equation-lt-estimation">(2.21)</a>-<a class="reference internal" href="#equation-seasonal-forecast-additive-model">(2.23)</a> para periodos de tiempo <span class="math notranslate nohighlight">\(t = 1, 2,\dots, T\)</span> <span id="id9">[<a class="reference internal" href="biblio.html#id29" title="R. Hyndman, A.B. Koehler, J.K. Ord, and R.D. Snyder. Forecasting with Exponential Smoothing: The State Space Approach. Springer Series in Statistics. Springer Berlin Heidelberg, 2008. ISBN 9783540719182. URL: https://books.google.com.co/books?id=GSyzox8Lu9YC.">Hyndman <em>et al.</em>, 2008</a>]</span>.</p></li>
 </ul>
 <div class="tip admonition">
 <p class="admonition-title">Observación</p>
@@ -2356,7 +2364,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 <ul>
 <li><p>Si la <em><strong>amplitud del patrón estacional es proporcional al nivel medio de la serie temporal estacional</strong></em>, el siguiente modelo estacional multiplicativo será el más adecuado</p>
 <div class="math notranslate nohighlight" id="equation-multiplicative-stational-model">
-<span class="eqno">(2.24)<a class="headerlink" href="#equation-multiplicative-stational-model" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.25)<a class="headerlink" href="#equation-multiplicative-stational-model" title="Link to this equation">#</a></span>\[
   y_{t}=L_{t}S_{t}+\varepsilon_{t},
   \]</div>
 <p>donde <span class="math notranslate nohighlight">\(L_{t}\)</span> una vez más representa la componente permanente (i.e. <span class="math notranslate nohighlight">\(\beta_{0}+\beta_{1}t\)</span>); <span class="math notranslate nohighlight">\(S_{t}\)</span> representa el ajuste estacional con <span class="math notranslate nohighlight">\(S_{t}=S_{t+s}=S_{t+2s}=\cdots\)</span> para <span class="math notranslate nohighlight">\(t=1,2,\dots, s-1\)</span>, donde <span class="math notranslate nohighlight">\(s\)</span> es la longitud del periodo de los ciclos; y <span class="math notranslate nohighlight">\(\varepsilon_{t}\)</span> se supone no correlacionado con media 0 y varianza constante <span class="math notranslate nohighlight">\(\sigma_{\varepsilon}^{2}\)</span>.</p>
@@ -2369,7 +2377,7 @@ r_{k}=\frac{\displaystyle{\sum_{t=k}^{T-1}[e_{t}(1)-\overline{e}][e_{t-k}(1)-\ov
 </li>
 </ul>
 <ul class="simple">
-<li><p>Como en el modelo aditivo, emplearemos tres suavizadores exponenciales para estimar los parámetros en la Ecuación <a class="reference internal" href="#equation-multiplicative-stational-model">(2.24)</a></p></li>
+<li><p>Como en el modelo aditivo, emplearemos tres suavizadores exponenciales para estimar los parámetros en la Ecuación <a class="reference internal" href="#equation-multiplicative-stational-model">(2.25)</a></p></li>
 </ul>
 <ol class="arabic">
 <li><p>Actualizar el estimador de <span class="math notranslate nohighlight">\(L_{T}\)</span> usando</p>
