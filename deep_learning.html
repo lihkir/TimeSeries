@@ -408,10 +408,10 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[
-J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsymbol{\theta}^{(i)})\approx J(\boldsymbol{\theta}^{(i-1)})+\mu_{i}\cdot\nabla^{T}J(\boldsymbol{\theta}^{(i-1)})\Delta\boldsymbol{\theta}^{(i-1)}.
+J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsymbol{\theta}^{(i)})\approx J(\boldsymbol{\theta}^{(i-1)})+\mu_{i}\cdot\nabla^{T}J(\boldsymbol{\theta}^{(i-1)})\Delta\boldsymbol{\theta}^{(i)}.
 \]</div>
 <ul class="simple">
-<li><p>Nótese que <em><strong>seleccionando la dirección tal que</strong></em> <span class="math notranslate nohighlight">\(\nabla^{T}J(\boldsymbol{\theta}^{(i-1)})\Delta\boldsymbol{\theta}^{(i)}&lt;0\)</span>, <em><strong>garantizará que</strong></em> <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsymbol{\theta}^{(i)})&lt;J(\boldsymbol{\theta}^{(i-1)})\)</span>. Tal selección de <span class="math notranslate nohighlight">\(\Delta\boldsymbol{\theta}^{(i)}\)</span> y <span class="math notranslate nohighlight">\(\nabla J(\boldsymbol{\theta}^{(i-1)})\)</span> debe formar un <em><strong>ángulo obtuso</strong></em>. Las curvas de nivel asociadas a <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span> pueden tomar cualquier forma, la cual va a <em><strong>depender de como está definido</strong></em> <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span>.</p></li>
+<li><p>Nótese que <em><strong>seleccionando la dirección tal que</strong></em> <span class="math notranslate nohighlight">\(\nabla^{T}J(\boldsymbol{\theta}^{(i-1)})\Delta\boldsymbol{\theta}^{(i)}&lt;0\)</span>, <em><strong>garantizará que</strong></em> <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsymbol{\theta}^{(i)})&lt;J(\boldsymbol{\theta}^{(i-1)})\)</span>. Tal selección de <span class="math notranslate nohighlight">\(\Delta\boldsymbol{\theta}^{(i)}\)</span> y <span class="math notranslate nohighlight">\(\nabla J(\boldsymbol{\theta}^{(i-1)})\)</span> debe formar un <em><strong>ángulo obtuso</strong></em> (<span class="math notranslate nohighlight">\(90^{\circ}&lt;\phi&lt;180^{\circ}\)</span>). Las curvas de nivel asociadas a <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span> pueden tomar cualquier forma, la cual va a <em><strong>depender de como está definido</strong></em> <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span> se supone diferenciable, por lo tanto, las <em><strong>curvas de nivel o contornos deben ser suaves y aceptar un plano tangente en cualquier punto</strong></em>. Además, de los cursos de cálculo sabemos que el <em><strong>vector gradiente</strong></em> <span class="math notranslate nohighlight">\(\nabla J(\boldsymbol{\theta})\)</span> <em><strong>es perpendicular al plano tangente</strong></em> (recta tangente) <em><strong>a la correspondiente curva de nivel en el punto</strong></em> <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>.</p></li>
 <li><p>Nótese que <em><strong>seleccionando la dirección de búsqueda</strong></em> <span class="math notranslate nohighlight">\(\Delta\boldsymbol{\theta}^{(i)}\)</span> <em><strong>que forma un angulo obtuso con el gradiente, se coloca a</strong></em> <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsymbol{\theta}^{(i)}\)</span> <em><strong>en un punto sobre el contorno el cual corresponde a un valor menor que</strong></em> <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})\)</span>.</p></li>
 </ul>
@@ -426,7 +426,7 @@ J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsym
 <figure class="align-center" id="maximun-dec-cost-function">
 <a class="reference internal image-reference" href="_images/maximun_dec_cost_function.png"><img alt="_images/maximun_dec_cost_function.png" src="_images/maximun_dec_cost_function.png" style="width: 495.20000000000005px; height: 365.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">El vector gradiente en un punto <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> es perpendicular al plano tangente (línea punteada) en la curva de nivel que cruza <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>. La dirección de descenso forma un ángulo obtuso, <span class="math notranslate nohighlight">\(\phi\)</span>, con el vector gradiente.</span><a class="headerlink" href="#maximun-dec-cost-function" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">El vector gradiente en un punto <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> es perpendicular al plano tangente (línea punteada) en la curva de nivel que cruza <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>. La dirección de descenso forma un ángulo obtuso, <span class="math notranslate nohighlight">\(\phi\)</span>, con el vector gradiente. Fuente <span id="id2">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span></span><a class="headerlink" href="#maximun-dec-cost-function" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -435,7 +435,7 @@ J(\boldsymbol{\theta}^{(i)})=J(\boldsymbol{\theta}^{(i-1)}+\mu_{i}\Delta\boldsym
 <figure class="align-center" id="curva-nivel-cost-function">
 <a class="reference internal image-reference" href="_images/curva_nivel_cost_function.png"><img alt="_images/curva_nivel_cost_function.png" src="_images/curva_nivel_cost_function.png" style="width: 484.2px; height: 359.1px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Las correspondientes curvas de nivel para la función de coste, en el plano bidimensional. Nótese que a medida que nos alejamos del valor óptimo, <span class="math notranslate nohighlight">\(\boldsymbol{\theta}_{\star}\)</span>, los valores de <span class="math notranslate nohighlight">\(c\)</span> aumentan.</span><a class="headerlink" href="#curva-nivel-cost-function" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Las correspondientes curvas de nivel para la función de coste, en el plano bidimensional. Nótese que a medida que nos alejamos del valor óptimo, <span class="math notranslate nohighlight">\(\boldsymbol{\theta}_{\star}\)</span>, los valores de <span class="math notranslate nohighlight">\(c\)</span> aumentan. Fuente <span id="id3">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#curva-nivel-cost-function" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -460,7 +460,7 @@ z=-\frac{\nabla J(\boldsymbol{\theta}^{(i-1)})}{\|\nabla J(\boldsymbol{\theta}^{
 </figure>
 <ul class="simple">
 <li><p>La selección de <span class="math notranslate nohighlight">\(\mu_{i}\)</span> debe ser realizada de tal forma que <em><strong>garantice convergencia de la secuencia de minimización</strong></em>. Nótese que <em><strong>el algoritmo puede oscilar en torno al mínimo sin converger, si no seleccionamos la dirección correcta</strong></em>. La selección de <span class="math notranslate nohighlight">\(\mu_{i}\)</span> <em><strong>dependerá de la convergencia a cero del error entre</strong></em> <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^{(i)}\)</span> <em><strong>y el mínimo real en forma de serie geométrica</strong></em>.</p></li>
-<li><p>Por ejemplo, para el caso de la función de coste del error cuadrático medio, la longitud de paso está dada por: <span class="math notranslate nohighlight">\(0&lt;\mu&lt;2/\lambda_{\max}\)</span>, donde <span class="math notranslate nohighlight">\(\lambda_{\max}\)</span> el máximo eigenvalor de la matriz de covarianza <span class="math notranslate nohighlight">\(\Sigma_{x}=\mathbb{E}[\boldsymbol{x}\boldsymbol{x}^{T}]\)</span>, donde <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})=\text{E}[(y-\boldsymbol{\theta}^{T}\boldsymbol{x})^{2}]\)</span> (ver <span id="id2">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>) (<em><strong><code class="docutils literal notranslate"><span class="pre">bonus</span></code></strong></em>).</p></li>
+<li><p>Por ejemplo, para el caso de la función de coste del error cuadrático medio, la longitud de paso está dada por: <span class="math notranslate nohighlight">\(0&lt;\mu&lt;2/\lambda_{\max}\)</span>, donde <span class="math notranslate nohighlight">\(\lambda_{\max}\)</span> el máximo eigenvalor de la matriz de covarianza <span class="math notranslate nohighlight">\(\Sigma_{x}=\mathbb{E}[\boldsymbol{x}\boldsymbol{x}^{T}]\)</span>, donde <span class="math notranslate nohighlight">\(J(\boldsymbol{\theta})=\text{E}[(y-\boldsymbol{\theta}^{T}\boldsymbol{x})^{2}]\)</span> (ver <span id="id4">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>) (<em><strong><code class="docutils literal notranslate"><span class="pre">bonus</span></code></strong></em>).</p></li>
 </ul>
 </section>
 <section id="el-perceptron">
@@ -560,7 +560,7 @@ J(\boldsymbol{\theta})=\left(-\sum_{n:\boldsymbol{x}_{n}\in\mathcal{Y}}y_{n}\bol
 <figure class="align-center" id="perceptron-rule">
 <a class="reference internal image-reference" href="_images/perceptron_rule.png"><img alt="_images/perceptron_rule.png" src="_images/perceptron_rule.png" style="width: 332.8px; height: 346.40000000000003px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">El punto <span class="math notranslate nohighlight">\(x\)</span> está mal clasificado por la línea roja. La regla perceptrón gira el hiperplano hacia el punto <span class="math notranslate nohighlight">\(x\)</span>, para intentar incluirlo en el lado correcto del nuevo hiperplano y clasificarlo correctamente. El nuevo hiperplano está definido por <span class="math notranslate nohighlight">\(θ^{(i)}\)</span> y se muestra con la línea negra.</span><a class="headerlink" href="#perceptron-rule" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">El punto <span class="math notranslate nohighlight">\(x\)</span> está mal clasificado por la línea roja. La regla perceptrón gira el hiperplano hacia el punto <span class="math notranslate nohighlight">\(x\)</span>, para intentar incluirlo en el lado correcto del nuevo hiperplano y clasificarlo correctamente. El nuevo hiperplano está definido por <span class="math notranslate nohighlight">\(θ^{(i)}\)</span> y se muestra con la línea negra. Fuente <span id="id5">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#perceptron-rule" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -623,7 +623,7 @@ f(z)=
 <figure class="align-center" id="hidden-layer-activationf-function-fig">
 <a class="reference internal image-reference" href="_images/hidden_layer_activationf_function.png"><img alt="_images/hidden_layer_activationf_function.png" src="_images/hidden_layer_activationf_function.png" style="width: 508.9px; height: 256.2px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Selección de función de activación para <em><strong><code class="docutils literal notranslate"><span class="pre">hidden</span> <span class="pre">layers</span></code></strong></em>. (Fuente <span id="id3">[<a class="reference internal" href="biblio.html#id32" title="J. Brownlee and Machine Learning Mastery. Deep Learning with Python: Develop Deep Learning Models on Theano and TensorFlow Using Keras. Machine Learning Mastery, 2017. URL: https://books.google.com.co/books?id=eJw2nQAACAAJ.">Brownlee and Mastery, 2017</a>]</span>).</span><a class="headerlink" href="#hidden-layer-activationf-function-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Selección de función de activación para <em><strong><code class="docutils literal notranslate"><span class="pre">hidden</span> <span class="pre">layers</span></code></strong></em>. (Fuente <span id="id6">[<a class="reference internal" href="biblio.html#id32" title="J. Brownlee and Machine Learning Mastery. Deep Learning with Python: Develop Deep Learning Models on Theano and TensorFlow Using Keras. Machine Learning Mastery, 2017. URL: https://books.google.com.co/books?id=eJw2nQAACAAJ.">Brownlee and Mastery, 2017</a>]</span>).</span><a class="headerlink" href="#hidden-layer-activationf-function-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -633,7 +633,7 @@ f(z)=
 <figure class="align-center" id="output-layer-activation-function">
 <a class="reference internal image-reference" href="_images/output_layer_activation_function.png"><img alt="_images/output_layer_activation_function.png" src="_images/output_layer_activation_function.png" style="width: 485.79999999999995px; height: 301.7px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Selección de función de activación para <em><strong><code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layers</span></code></strong></em>. (Fuente <span id="id4">[<a class="reference internal" href="biblio.html#id32" title="J. Brownlee and Machine Learning Mastery. Deep Learning with Python: Develop Deep Learning Models on Theano and TensorFlow Using Keras. Machine Learning Mastery, 2017. URL: https://books.google.com.co/books?id=eJw2nQAACAAJ.">Brownlee and Mastery, 2017</a>]</span>).</span><a class="headerlink" href="#output-layer-activation-function" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Selección de función de activación para <em><strong><code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layers</span></code></strong></em>. (Fuente <span id="id7">[<a class="reference internal" href="biblio.html#id32" title="J. Brownlee and Machine Learning Mastery. Deep Learning with Python: Develop Deep Learning Models on Theano and TensorFlow Using Keras. Machine Learning Mastery, 2017. URL: https://books.google.com.co/books?id=eJw2nQAACAAJ.">Brownlee and Mastery, 2017</a>]</span>).</span><a class="headerlink" href="#output-layer-activation-function" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -686,10 +686,10 @@ f(\boldsymbol{z}^{r})
 <ul class="simple">
 <li><p>La siguiente figura describe como es creada la <span class="math notranslate nohighlight">\(j\)</span>-ésima columna de la red neuronal full conectada</p></li>
 </ul>
-<figure class="align-center" id="id20">
+<figure class="align-center" id="id23">
 <a class="reference internal image-reference" href="_images/fully_connected_net.png"><img alt="_images/fully_connected_net.png" src="_images/fully_connected_net.png" style="width: 600.0px; height: 317.20000000000005px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text"><span class="math notranslate nohighlight">\(j\)</span>-ésimo elemento de la capa <span class="math notranslate nohighlight">\(r\)</span> de la red totalmente conectada.</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text"><span class="math notranslate nohighlight">\(j\)</span>-ésimo elemento de la capa <span class="math notranslate nohighlight">\(r\)</span> de la red totalmente conectada.</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1049,8 +1049,8 @@ Calcule <span class="math notranslate nohighlight">\(y_{nj}^{r}=f(z_{nj}^{r})\)<
 </ol>
 </section>
 </div><ul class="simple">
-<li><p>El algoritmo de <em><strong>backpropagation</strong></em> puede reivindicar una serie de padres. La popularización del algoritmo se asocia con el artículo clásico <span id="id5">[<a class="reference internal" href="biblio.html#id33" title="David E Rumelhart, Geoffrey E Hinton, and Ronald J Williams. Learning representations by back-propagating errors. nature, 323(6088):533–536, 1986.">Rumelhart <em>et al.</em>, 1986</a>]</span>, donde se proporciona la derivación del algoritmo. La idea de <em><strong>backpropagation</strong></em> también aparece en <span id="id6">[<a class="reference internal" href="biblio.html#id34" title="Arthur E Bryson Jr, Walter F Denham, and Stewart E Dreyfus. Optimal programming problems with inequality constraints. AIAA journal, 1(11):2544–2550, 1963.">Bryson Jr <em>et al.</em>, 1963</a>]</span> en el contexto del control óptimo.</p></li>
-<li><p>Existen diferentes variaciones del algoritmo <em><strong>backpropagation</strong></em>, tales como: <em><strong>Gradiende descendente con término de momento, Algoritmo de momentos de Nesterov’s, Algoritmo AdaGrad, RMSProp con momento de Nesterov, Algortimo de estimación de momentos adaptativo</strong></em> los cuales pueden ser utlizados para resolver la tarea de optimización (ver <span id="id7">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>).</p></li>
+<li><p>El algoritmo de <em><strong>backpropagation</strong></em> puede reivindicar una serie de padres. La popularización del algoritmo se asocia con el artículo clásico <span id="id8">[<a class="reference internal" href="biblio.html#id33" title="David E Rumelhart, Geoffrey E Hinton, and Ronald J Williams. Learning representations by back-propagating errors. nature, 323(6088):533–536, 1986.">Rumelhart <em>et al.</em>, 1986</a>]</span>, donde se proporciona la derivación del algoritmo. La idea de <em><strong>backpropagation</strong></em> también aparece en <span id="id9">[<a class="reference internal" href="biblio.html#id34" title="Arthur E Bryson Jr, Walter F Denham, and Stewart E Dreyfus. Optimal programming problems with inequality constraints. AIAA journal, 1(11):2544–2550, 1963.">Bryson Jr <em>et al.</em>, 1963</a>]</span> en el contexto del control óptimo.</p></li>
+<li><p>Existen diferentes variaciones del algoritmo <em><strong>backpropagation</strong></em>, tales como: <em><strong>Gradiende descendente con término de momento, Algoritmo de momentos de Nesterov’s, Algoritmo AdaGrad, RMSProp con momento de Nesterov, Algortimo de estimación de momentos adaptativo</strong></em> los cuales pueden ser utlizados para resolver la tarea de optimización (ver <span id="id10">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>).</p></li>
 </ul>
 </section>
 <section id="las-capas-ocultas">
@@ -1120,7 +1120,7 @@ Calcule <span class="math notranslate nohighlight">\(y_{nj}^{r}=f(z_{nj}^{r})\)<
 <figure class="align-center" id="recurrent-neural-network-arch-numref">
 <a class="reference internal image-reference" href="_images/recurrent_neural_network_arch.png"><img alt="_images/recurrent_neural_network_arch.png" src="_images/recurrent_neural_network_arch.png" style="width: 552.0px; height: 304.8px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Arquitectura de una <em><strong>Red Neuronal Recurrente</strong></em>. Fuente <span id="id8">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#recurrent-neural-network-arch-numref" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Arquitectura de una <em><strong>Red Neuronal Recurrente</strong></em>. Fuente <span id="id11">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#recurrent-neural-network-arch-numref" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -1264,8 +1264,8 @@ J(U, W, V, \boldsymbol{b}, \boldsymbol{c})=\sum_{n=1}^{N}J_{n}(U, W, V, \boldsym
 <p class="admonition-title"><span class="caption-number">Observation 4.1 </span></p>
 <section class="observation-content" id="proof-content">
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">RNN</span> <span class="pre">profundas</span></code></strong>: Además de la red <em><strong>RNN básica que comprende una sola capa de estados</strong></em>, se han propuesto <em><strong>extensiones que implican múltiples capas de estados</strong></em>, una encima de otra (ver <span id="id9">[<a class="reference internal" href="biblio.html#id36" title="Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio. How to construct deep recurrent neural networks. arXiv preprint arXiv:1312.6026, 2013.">Pascanu <em>et al.</em>, 2013</a>]</span>).</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">RNN</span> <span class="pre">bidireccionales</span></code></strong>: Como su nombre indica, en las <em><strong>RNN bidireccionales hay dos variables de estado</strong></em>, es decir, una denotada como <span class="math notranslate nohighlight">\(\overset{\rightarrow}{\boldsymbol{h}}\)</span><em><strong>, que se propaga hacia adelante</strong></em>, y otra, <span class="math notranslate nohighlight">\(\overset{\leftarrow}{\boldsymbol{h}}\)</span><em><strong>, que se propaga hacia atrás</strong></em>. De este modo, <em><strong>las salidas dependen tanto del pasado como del futuro</strong></em> (ver <span id="id10">[<a class="reference internal" href="biblio.html#id37" title="Alex Graves, Abdel-rahman Mohamed, and Geoffrey Hinton. Speech recognition with deep recurrent neural networks. In 2013 IEEE international conference on acoustics, speech and signal processing, 6645–6649. Ieee, 2013.">Graves <em>et al.</em>, 2013</a>]</span>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RNN</span> <span class="pre">profundas</span></code></strong>: Además de la red <em><strong>RNN básica que comprende una sola capa de estados</strong></em>, se han propuesto <em><strong>extensiones que implican múltiples capas de estados</strong></em>, una encima de otra (ver <span id="id12">[<a class="reference internal" href="biblio.html#id36" title="Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio. How to construct deep recurrent neural networks. arXiv preprint arXiv:1312.6026, 2013.">Pascanu <em>et al.</em>, 2013</a>]</span>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RNN</span> <span class="pre">bidireccionales</span></code></strong>: Como su nombre indica, en las <em><strong>RNN bidireccionales hay dos variables de estado</strong></em>, es decir, una denotada como <span class="math notranslate nohighlight">\(\overset{\rightarrow}{\boldsymbol{h}}\)</span><em><strong>, que se propaga hacia adelante</strong></em>, y otra, <span class="math notranslate nohighlight">\(\overset{\leftarrow}{\boldsymbol{h}}\)</span><em><strong>, que se propaga hacia atrás</strong></em>. De este modo, <em><strong>las salidas dependen tanto del pasado como del futuro</strong></em> (ver <span id="id13">[<a class="reference internal" href="biblio.html#id37" title="Alex Graves, Abdel-rahman Mohamed, and Geoffrey Hinton. Speech recognition with deep recurrent neural networks. In 2013 IEEE international conference on acoustics, speech and signal processing, 6645–6649. Ieee, 2013.">Graves <em>et al.</em>, 2013</a>]</span>).</p></li>
 </ul>
 </section>
 </div></section>
@@ -1471,27 +1471,27 @@ J(U, W, V, \boldsymbol{b}, \boldsymbol{c})=\sum_{n=1}^{N}J_{n}(U, W, V, \boldsym
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0, Loss: 0.4853356191342308
-Epoch 100, Loss: 0.013046882529115067
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0, Loss: 0.38753522909014065
+Epoch 100, Loss: 0.009228053210117604
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 200, Loss: 0.006716909906222653
-Epoch 300, Loss: 0.006495367529199736
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 200, Loss: 0.0060878161714585256
+Epoch 300, Loss: 0.005974296992324269
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 400, Loss: 0.00629686657724128
-Epoch 500, Loss: 0.006106418049982584
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 400, Loss: 0.005867766210183003
+Epoch 500, Loss: 0.005761767279040523
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 600, Loss: 0.005920597468814323
-Epoch 700, Loss: 0.005736536424629754
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 600, Loss: 0.005656052406221255
+Epoch 700, Loss: 0.005550395397161551
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 800, Loss: 0.005551735552360344
-Epoch 900, Loss: 0.00536393538653927
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 800, Loss: 0.005444579304197365
+Epoch 900, Loss: 0.005338393308295797
 </pre></div>
 </div>
-<img alt="_images/23cd8cd8f9cd4624c2079ebe362bf68260976cbc9c0d3fd0ad11958a4f97bf17.png" src="_images/23cd8cd8f9cd4624c2079ebe362bf68260976cbc9c0d3fd0ad11958a4f97bf17.png" />
+<img alt="_images/ded384ad365952a4f2f8a54a1860be840cad92cbb1c727b04a3b954fba7955af.png" src="_images/ded384ad365952a4f2f8a54a1860be840cad92cbb1c727b04a3b954fba7955af.png" />
 </div>
 </div>
 </section>
@@ -1502,14 +1502,14 @@ Epoch 900, Loss: 0.00536393538653927
 <p class="admonition-title"><span class="caption-number">Observation 4.2 </span></p>
 <section class="observation-content" id="proof-content">
 <ul class="simple">
-<li><p>La <em><strong>idea clave de la red LSTM</strong></em>, propuesta en el artículo seminal <span id="id11">[<a class="reference internal" href="biblio.html#id43" title="Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. Neural computation, 9(8):1735–1780, 1997.">Hochreiter and Schmidhuber, 1997</a>]</span>, es el llamado <em><strong>estado de celda</strong></em>, que ayuda a <em><strong>superar los problemas asociados con los fenómenos de desvanecimiento/explosión</strong></em> que son causados por las <em><strong>dependencias largo plazo</strong></em> dentro de la red. Las <em><strong>redes LSTM</strong></em> tienen la capacidad incorporada de <em><strong>controlar el flujo de información que entra y sale de la memoria del sistema mediante algoritmos no lineales</strong></em>.</p></li>
+<li><p>La <em><strong>idea clave de la red LSTM</strong></em>, propuesta en el artículo seminal <span id="id14">[<a class="reference internal" href="biblio.html#id43" title="Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. Neural computation, 9(8):1735–1780, 1997.">Hochreiter and Schmidhuber, 1997</a>]</span>, es el llamado <em><strong>estado de celda</strong></em>, que ayuda a <em><strong>superar los problemas asociados con los fenómenos de desvanecimiento/explosión</strong></em> que son causados por las <em><strong>dependencias largo plazo</strong></em> dentro de la red. Las <em><strong>redes LSTM</strong></em> tienen la capacidad incorporada de <em><strong>controlar el flujo de información que entra y sale de la memoria del sistema mediante algoritmos no lineales</strong></em>.</p></li>
 <li><p>Estas puertas se implementan <em><strong>mediante la no linealidad sigmoidea y un multiplicador</strong></em>. Desde un punto de vista algorítmico, las puertas equivalen a <em><strong>aplicar una ponderación al flujo de información correspondiente</strong></em>. Los <em><strong>pesos</strong></em> se sitúan en el intervalo <span class="math notranslate nohighlight">\([0,1]\)</span> y <em><strong>dependen de los valores de las variables implicadas que activan la no linealidad sigmoidea</strong></em>.</p></li>
 </ul>
 </section>
 </div><figure class="align-center" id="lstm-arch-rnn-numref">
 <a class="reference internal image-reference" href="_images/lstm_arch_rnn.png"><img alt="_images/lstm_arch_rnn.png" src="_images/lstm_arch_rnn.png" style="width: 664.8000000000001px; height: 332.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">Arquitectura de unidad LSTM. Fuente <span id="id12">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#lstm-arch-rnn-numref" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">Arquitectura de unidad LSTM. Fuente <span id="id15">[<a class="reference internal" href="biblio.html#id31" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#lstm-arch-rnn-numref" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -1618,14 +1618,14 @@ Epoch 900, Loss: 0.00536393538653927
 </div><div class="admonition-variantes-y-aplicaciones admonition">
 <p class="admonition-title">Variantes y Aplicaciones</p>
 <ul class="simple">
-<li><p>Además de la estructura LSTM ya comentada, <em><strong>se han propuesto diversas variantes</strong></em>. Un extenso <em><strong>estudio comparativo entre diferentes arquitecturas LSTM y RNN</strong></em> se puede encontrar en <span id="id13">[<a class="reference internal" href="biblio.html#id44" title="Klaus Greff, Rupesh K Srivastava, Jan Koutník, Bas R Steunebrink, and Jürgen Schmidhuber. Lstm: a search space odyssey. IEEE transactions on neural networks and learning systems, 28(10):2222–2232, 2016.">Greff <em>et al.</em>, 2016</a>, <a class="reference internal" href="biblio.html#id45" title="Rafal Jozefowicz, Wojciech Zaremba, and Ilya Sutskever. An empirical exploration of recurrent network architectures. In International conference on machine learning, 2342–2350. PMLR, 2015.">Jozefowicz <em>et al.</em>, 2015</a>]</span>. Las <em><strong>RNNs y las LSTMs</strong></em> se han utilizado con éxito en una <em><strong>amplia gama de aplicaciones</strong></em>, tales como:</p>
+<li><p>Además de la estructura LSTM ya comentada, <em><strong>se han propuesto diversas variantes</strong></em>. Un extenso <em><strong>estudio comparativo entre diferentes arquitecturas LSTM y RNN</strong></em> se puede encontrar en <span id="id16">[<a class="reference internal" href="biblio.html#id44" title="Klaus Greff, Rupesh K Srivastava, Jan Koutník, Bas R Steunebrink, and Jürgen Schmidhuber. Lstm: a search space odyssey. IEEE transactions on neural networks and learning systems, 28(10):2222–2232, 2016.">Greff <em>et al.</em>, 2016</a>, <a class="reference internal" href="biblio.html#id45" title="Rafal Jozefowicz, Wojciech Zaremba, and Ilya Sutskever. An empirical exploration of recurrent network architectures. In International conference on machine learning, 2342–2350. PMLR, 2015.">Jozefowicz <em>et al.</em>, 2015</a>]</span>. Las <em><strong>RNNs y las LSTMs</strong></em> se han utilizado con éxito en una <em><strong>amplia gama de aplicaciones</strong></em>, tales como:</p>
 <ul>
-<li><p>el <code class="docutils literal notranslate"><span class="pre">modelado</span> <span class="pre">del</span> <span class="pre">lenguaje</span></code> <span id="id14">[<a class="reference internal" href="biblio.html#id38" title="Ilya Sutskever, James Martens, and Geoffrey E Hinton. Generating text with recurrent neural networks. In Proceedings of the 28th international conference on machine learning (ICML-11), 1017–1024. 2011.">Sutskever <em>et al.</em>, 2011</a>]</span>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">traducción</span> <span class="pre">de</span> <span class="pre">máquinas</span></code> <span id="id15">[<a class="reference internal" href="biblio.html#id39" title="Shujie Liu, Nan Yang, Mu Li, and Ming Zhou. A recursive recurrent neural network for statistical machine translation. In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 1491–1500. 2014.">Liu <em>et al.</em>, 2014</a>]</span>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reconocimiento</span> <span class="pre">del</span> <span class="pre">habla</span></code> <span id="id16">[<a class="reference internal" href="biblio.html#id40" title="Alex Graves and Navdeep Jaitly. Towards end-to-end speech recognition with recurrent neural networks. In International conference on machine learning, 1764–1772. PMLR, 2014.">Graves and Jaitly, 2014</a>]</span>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">visión</span> <span class="pre">artificial</span></code> para la generación de descriptores de imágenes <span id="id17">[<a class="reference internal" href="biblio.html#id46" title="Andrej Karpathy and Li Fei-Fei. Deep visual-semantic alignments for generating image descriptions. In Proceedings of the IEEE conference on computer vision and pattern recognition, 3128–3137. 2015.">Karpathy and Fei-Fei, 2015</a>]</span>,</p></li>
-<li><p>análisis de datos de fMRI para comprender la <code class="docutils literal notranslate"><span class="pre">dinámica</span> <span class="pre">temporal</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">redes</span> <span class="pre">cerebrales</span></code> asociadas <span id="id18">[<a class="reference internal" href="biblio.html#id41" title="Youngjoo Seo, Manuel Morante, Yannis Kopsinis, and Sergios Theodoridis. Unsupervised pre-training of the brain connectivity dynamic using residual d-net. In Neural Information Processing: 26th International Conference, ICONIP 2019, Sydney, NSW, Australia, December 12–15, 2019, Proceedings, Part III 26, 608–620. Springer, 2019.">Seo <em>et al.</em>, 2019</a>]</span>.</p></li>
-<li><p>pronostico de <code class="docutils literal notranslate"><span class="pre">volatilidad</span> <span class="pre">de</span> <span class="pre">Bitcoin</span></code> <span id="id19">[<a class="reference internal" href="biblio.html#id42" title="Tiago E Pratas, Filipe R Ramos, and Lihki Rubio. Forecasting bitcoin volatility: exploring the potential of deep learning. Eurasian Economic Review, pages 1–21, 2023.">Pratas <em>et al.</em>, 2023</a>]</span></p></li>
+<li><p>el <code class="docutils literal notranslate"><span class="pre">modelado</span> <span class="pre">del</span> <span class="pre">lenguaje</span></code> <span id="id17">[<a class="reference internal" href="biblio.html#id38" title="Ilya Sutskever, James Martens, and Geoffrey E Hinton. Generating text with recurrent neural networks. In Proceedings of the 28th international conference on machine learning (ICML-11), 1017–1024. 2011.">Sutskever <em>et al.</em>, 2011</a>]</span>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">traducción</span> <span class="pre">de</span> <span class="pre">máquinas</span></code> <span id="id18">[<a class="reference internal" href="biblio.html#id39" title="Shujie Liu, Nan Yang, Mu Li, and Ming Zhou. A recursive recurrent neural network for statistical machine translation. In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 1491–1500. 2014.">Liu <em>et al.</em>, 2014</a>]</span>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reconocimiento</span> <span class="pre">del</span> <span class="pre">habla</span></code> <span id="id19">[<a class="reference internal" href="biblio.html#id40" title="Alex Graves and Navdeep Jaitly. Towards end-to-end speech recognition with recurrent neural networks. In International conference on machine learning, 1764–1772. PMLR, 2014.">Graves and Jaitly, 2014</a>]</span>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visión</span> <span class="pre">artificial</span></code> para la generación de descriptores de imágenes <span id="id20">[<a class="reference internal" href="biblio.html#id46" title="Andrej Karpathy and Li Fei-Fei. Deep visual-semantic alignments for generating image descriptions. In Proceedings of the IEEE conference on computer vision and pattern recognition, 3128–3137. 2015.">Karpathy and Fei-Fei, 2015</a>]</span>,</p></li>
+<li><p>análisis de datos de fMRI para comprender la <code class="docutils literal notranslate"><span class="pre">dinámica</span> <span class="pre">temporal</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">redes</span> <span class="pre">cerebrales</span></code> asociadas <span id="id21">[<a class="reference internal" href="biblio.html#id41" title="Youngjoo Seo, Manuel Morante, Yannis Kopsinis, and Sergios Theodoridis. Unsupervised pre-training of the brain connectivity dynamic using residual d-net. In Neural Information Processing: 26th International Conference, ICONIP 2019, Sydney, NSW, Australia, December 12–15, 2019, Proceedings, Part III 26, 608–620. Springer, 2019.">Seo <em>et al.</em>, 2019</a>]</span>.</p></li>
+<li><p>pronostico de <code class="docutils literal notranslate"><span class="pre">volatilidad</span> <span class="pre">de</span> <span class="pre">Bitcoin</span></code> <span id="id22">[<a class="reference internal" href="biblio.html#id42" title="Tiago E Pratas, Filipe R Ramos, and Lihki Rubio. Forecasting bitcoin volatility: exploring the potential of deep learning. Eurasian Economic Review, pages 1–21, 2023.">Pratas <em>et al.</em>, 2023</a>]</span></p></li>
 </ul>
 </li>
 <li><p>Por ejemplo, en el <em><strong>procesamiento del lenguaje</strong></em> la <em><strong>entrada suele ser una secuencia de palabras, que se codifican como números</strong></em> (son punteros al diccionario disponible). La <em><strong>salida es la secuencia de palabras que hay que predecir</strong></em>. Durante el entrenamiento, se establece <span class="math notranslate nohighlight">\(\boldsymbol{y}_{n} = \boldsymbol{x}_{n+1}\)</span>. Es decir, <em><strong>la red se entrena como un predictor no lineal</strong></em>.</p></li>
@@ -1830,15 +1830,15 @@ w_{5} = 0.07 - 0.01\times -0.384 = 0.0738.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-23 19:12:43.586892: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-01-23 19:12:43.846155: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2025-01-23 19:12:43.934271: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2025-01-23 19:12:43.953805: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2025-01-23 19:12:44.093942: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-07 11:56:31.729300: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-07 11:56:31.938400: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-02-07 11:56:32.017742: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-02-07 11:56:32.036661: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-02-07 11:56:32.194974: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-23 19:12:45.156279: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-07 11:56:32.960410: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -1870,13 +1870,13 @@ GPU details: {&#39;compute_capability&#39;: (8, 9), &#39;device_name&#39;: &#39;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1737677566.370629   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947393.787247    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677566.796936   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947394.071261    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677566.796974   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947394.071301    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677566.797967   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947394.072500    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
 </pre></div>
 </div>
@@ -2961,20 +2961,20 @@ Shape of test: (8760, 8)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I0000 00:00:1737677568.252344   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I0000 00:00:1738947395.415149    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677568.252392   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947395.415201    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677568.252411   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947395.415220    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677568.419924   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947395.527302    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-I0000 00:00:1737677568.419975   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+I0000 00:00:1738947395.527352    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2025-01-23 19:12:48.419983: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2112] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-I0000 00:00:1737677568.420016   11572 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2025-02-07 11:56:35.527360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2112] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+I0000 00:00:1738947395.527393    9196 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2025-01-23 19:12:48.420595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2021] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9558 MB memory:  -&gt; device: 0, name: NVIDIA GeForce RTX 4070, pci bus id: 0000:01:00.0, compute capability: 8.9
+2025-02-07 11:56:35.528327: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2021] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9558 MB memory:  -&gt; device: 0, name: NVIDIA GeForce RTX 4070, pci bus id: 0000:01:00.0, compute capability: 8.9
 </pre></div>
 </div>
 </div>
@@ -3165,24 +3165,24 @@ Your kernel may have been built without NUMA support.
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1737677569.547387   11719 service.cc:146] XLA service 0x7fe2e0003f30 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-I0000 00:00:1737677569.547415   11719 service.cc:154]   StreamExecutor device (0): NVIDIA GeForce RTX 4070, Compute Capability 8.9
-2025-01-23 19:12:49.558924: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-01-23 19:12:49.666073: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:531] Loaded cuDNN version 8907
+I0000 00:00:1738947396.494609    9344 service.cc:146] XLA service 0x7f4528005f80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1738947396.494632    9344 service.cc:154]   StreamExecutor device (0): NVIDIA GeForce RTX 4070, Compute Capability 8.9
+2025-02-07 11:56:36.504431: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-02-07 11:56:36.582925: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:531] Loaded cuDNN version 8907
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/274</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1:51</span> 407ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/274</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1:35</span> 349ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold"> 94/274</span> <span class=" -Color -Color-Green">━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 542us/step  
+<span class=" -Color -Color-Bold"> 94/274</span> <span class=" -Color -Color-Green">━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 541us/step  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">193/274</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 525us/step
+<span class=" -Color -Color-Bold">195/274</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 520us/step
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I0000 00:00:1737677569.892204   11719 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I0000 00:00:1738947396.799965    9344 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -3860,23 +3860,27 @@ Shape of test: (8661, 9)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/271</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">25s</span> 95ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/271</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">34s</span> 129ms/step
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold"> 77/271</span> <span class=" -Color -Color-Green">━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 659us/step 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold"> 97/271</span> <span class=" -Color -Color-Green">━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 522us/step
+<span class=" -Color -Color-Bold">169/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 597us/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">194/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 521us/step
+<span class=" -Color -Color-Bold">256/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━</span> <span class=" -Color -Color-Bold">0s</span> 590us/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">271/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 918us/step
+<span class=" -Color -Color-Bold">271/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">271/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 920us/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">271/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 </div>
@@ -3889,7 +3893,7 @@ Shape of test: (8661, 9)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAE for the validation set: 11.6775
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAE for the validation set: 11.6687
 </pre></div>
 </div>
 </div>
@@ -3910,7 +3914,7 @@ Shape of test: (8661, 9)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6fcae8765665814f55eedef806dd45b4440bb817c99e28a800071028e70c897a.png" src="_images/6fcae8765665814f55eedef806dd45b4440bb817c99e28a800071028e70c897a.png" />
+<img alt="_images/0f32a4e4c40ea37af100472bb21f5d1a8646a18ae032635cbc9f8cdfc05a204d.png" src="_images/0f32a4e4c40ea37af100472bb21f5d1a8646a18ae032635cbc9f8cdfc05a204d.png" />
 </div>
 </div>
 </section>
@@ -4101,7 +4105,7 @@ características:</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/271</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">45s</span> 170ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">  1/271</span> <span class=" -Color -Color-White">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">32s</span> 121ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -4109,23 +4113,27 @@ características:</p></li>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold"> 76/271</span> <span class=" -Color -Color-Green">━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+<span class=" -Color -Color-Bold"> 73/271</span> <span class=" -Color -Color-Green">━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">115/271</span> <span class=" -Color -Color-Green">━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+<span class=" -Color -Color-Bold">109/271</span> <span class=" -Color -Color-Green">━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">154/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+<span class=" -Color -Color-Bold">144/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">194/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+<span class=" -Color -Color-Bold">181/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-<span class=" -Color -Color-Bold">234/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+<span class=" -Color -Color-Bold">219/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━━━━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">259/271</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━</span><span class=" -Color -Color-White">━</span> <span class=" -Color -Color-Bold">0s</span> 1ms/step
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
